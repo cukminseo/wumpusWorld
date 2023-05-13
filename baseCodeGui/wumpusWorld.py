@@ -77,7 +77,7 @@ def reset():
     msg.clear()
     agent.hideturtle()
     agent.setheading(0)
-    agent.shape("./data/traveler0.gif")
+    agent.shape("./baseCode/data/traveler0.gif")
     agent.goto(-150, -150)
     row, column, index = 4, 1, 25
     agent.showturtle()
@@ -174,15 +174,15 @@ def goforward(r, c, i):
         j = row * (-100) + 250
         if existObj[index][0] == True:
             wumpusObj[index].goto(i, j)
-            wumpusObj[index].shape("./data/wumpus.gif")
+            wumpusObj[index].shape("./baseCodeGui/data/wumpus.gif")
             wumpusObj[index].showturtle()
         elif existObj[index][1] == True:
             obj.goto(i, j)
-            obj.shape("./data/pit.gif")
+            obj.shape("./baseCodeGui/data/pit.gif")
             obj.stamp()
         elif existObj[index][2] == True:
             obj.goto(i, j)
-            obj.shape("./data/gold.gif")
+            obj.shape("./baseCodeGui/data/gold.gif")
             obj.showturtle()
 
         if existObj[index][0] == True or existObj[index][1] == True:
@@ -216,13 +216,13 @@ def turnright():
 def setAgent():
     head = agent.heading()
     if head == 0:
-        agent.shape("./data/traveler0.gif")
+        agent.shape("./baseCodeGui/data/traveler0.gif")
     elif head == 90:
-        agent.shape("./data/traveler90.gif")
+        agent.shape("./baseCodeGui/data/traveler90.gif")
     elif head == 180:
-        agent.shape("./data/traveler180.gif")
+        agent.shape("./baseCodeGui/data/traveler180.gif")
     elif head == 270:
-        agent.shape("./data/traveler270.gif")
+        agent.shape("./baseCodeGui/data/traveler270.gif")
 
 def checkLine(): 
     nextRow, nextColumn, nextIndex = nextLoc(row, column, index)
@@ -235,18 +235,18 @@ def checkLine():
 def shoot(r, c, i):
     global arrowNum
     arrowNum -= 1
-    screen.bgpic("./data/world" + str(arrowNum) + ".gif")
+    screen.bgpic("./baseCodeGui/data/world" + str(arrowNum) + ".gif")
     p = c * 100 - 250
     q = r * (-100) + 250
     x, y = agent.position()
     if x < p:
-        arrow.shape("./data/arrow0.gif")
+        arrow.shape("./baseCodeGui/data/arrow0.gif")
     elif y < q:
-        arrow.shape("./data/arrow90.gif")
+        arrow.shape("./baseCodeGui/data/arrow90.gif")
     elif x > p:
-        arrow.shape("./data/arrow180.gif")
+        arrow.shape("./baseCodeGui/data/arrow180.gif")
     elif y > q:
-        arrow.shape("./data/arrow270.gif")
+        arrow.shape("./baseCodeGui/data/arrow270.gif")
     arrow.goto(x, y)
     arrow.showturtle()
     arrow.goto(p, q)
@@ -281,12 +281,12 @@ def back():
         choiceNum -= 1
         if row == 4 and column == 1:
             break
-    agent.shape("./data/traveler180.gif")
+    agent.shape("./baseCodeGui/data/traveler180.gif")
     agent.goto(-250, -150)
     climb()
 
 def climb():
-    agent.shape("./data/climber.gif")
+    agent.shape("./baseCodeGui/data/climber.gif")
     agent.goto(-250, 500)
     screen.exitonclick()
 
@@ -310,24 +310,24 @@ def printPercept():
 screen = turtle.Screen()
 screen.title("Wumpus World")
 screen.setup(600, 600)
-screen.bgpic("./data/world2.gif")
-screen.addshape("./data/traveler0.gif")
-screen.addshape("./data/traveler90.gif")
-screen.addshape("./data/traveler180.gif")
-screen.addshape("./data/traveler270.gif")
-screen.addshape("./data/climber.gif")
-screen.addshape("./data/wumpus.gif")
-screen.addshape("./data/pit.gif")
-screen.addshape("./data/gold.gif")
-screen.addshape("./data/arrow0.gif")
-screen.addshape("./data/arrow90.gif")
-screen.addshape("./data/arrow180.gif")
-screen.addshape("./data/arrow270.gif")
+screen.bgpic("./baseCodeGui/data/world2.gif")
+screen.addshape("./baseCodeGui/data/traveler0.gif")
+screen.addshape("./baseCodeGui/data/traveler90.gif")
+screen.addshape("./baseCodeGui/data/traveler180.gif")
+screen.addshape("./baseCodeGui/data/traveler270.gif")
+screen.addshape("./baseCodeGui/data/climber.gif")
+screen.addshape("./baseCodeGui/data/wumpus.gif")
+screen.addshape("./baseCodeGui/data/pit.gif")
+screen.addshape("./baseCodeGui/data/gold.gif")
+screen.addshape("./baseCodeGui/data/arrow0.gif")
+screen.addshape("./baseCodeGui/data/arrow90.gif")
+screen.addshape("./baseCodeGui/data/arrow180.gif")
+screen.addshape("./baseCodeGui/data/arrow270.gif")
 
 agent = turtle.Turtle()
 agent.hideturtle()
 agent.up()
-agent.shape("./data/traveler0.gif")
+agent.shape("./baseCodeGui/data/traveler0.gif")
 
 msg = turtle.Turtle()
 msg.hideturtle()
@@ -349,9 +349,9 @@ arrow.up()
 arrow.speed(1)
 
 world = [7, 8, 9, 10,
-         13, 14, 15, 16,
-         19, 20, 21, 22,
-         25, 26, 27, 28]
+        13, 14, 15, 16,
+        19, 20, 21, 22,
+        25, 26, 27, 28]
 gridState = []
 existObj = []
 wumpusObj = []
@@ -368,3 +368,4 @@ screen.onscreenclick(nextStep)
 screen.listen()
     
 turtle.mainloop()
+ß
