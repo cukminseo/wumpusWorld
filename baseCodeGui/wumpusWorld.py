@@ -77,7 +77,7 @@ def reset():
     msg.clear()
     agent.hideturtle()
     agent.setheading(0)
-    agent.shape("./baseCode/data/traveler0.gif")
+    agent.shape("./baseCodeGui/data/traveler0.gif")
     agent.goto(-150, -150)
     row, column, index = 4, 1, 25
     agent.showturtle()
