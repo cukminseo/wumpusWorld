@@ -368,4 +368,3 @@ screen.onscreenclick(nextStep)
 screen.listen()
     
 turtle.mainloop()
-ß
