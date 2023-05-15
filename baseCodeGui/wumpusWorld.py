@@ -3,7 +3,7 @@ import random
 import time
 
 
-def setWorld(): #게임의 initial state를 설정.
+def setWorld(): #게임의, initial state를 설정.
     global gridState, existObj, visitedGrid, wumpusObj
     while True:
         gridState = []
@@ -94,7 +94,6 @@ def reset():
 def nextStep(x, y):
     if (x > 200 and x < 300) and (y < -200 and y > -300):
         nextRow, nextColumn, nextIndex = nextLoc(row, column, index)
-
         r, c, i = checkLine() 
         if i != -1 and arrowNum > 0: 
             shoot(r, c, i)
