@@ -17,7 +17,7 @@ def importImages():#코드에서 사용될 이지미 불러오기
     screen.addshape("./baseCodeGui/data/arrow180.gif")
     screen.addshape("./baseCodeGui/data/arrow270.gif")
 
-def setWorld(): #게임의 initial state를 설정.
+def setWorld(): #게임의, initial state를 설정.
     global gridState, existObj, visitedGrid, wumpusObj
     while True:
         gridState = []
