@@ -2,6 +2,20 @@ import turtle
 import random
 import time
 
+def importImages():#코드에서 사용될 이지미 불러오기
+    screen.bgpic("./baseCodeGui/data/world2.gif")
+    screen.addshape("./baseCodeGui/data/traveler0.gif")
+    screen.addshape("./baseCodeGui/data/traveler90.gif")
+    screen.addshape("./baseCodeGui/data/traveler180.gif")
+    screen.addshape("./baseCodeGui/data/traveler270.gif")
+    screen.addshape("./baseCodeGui/data/climber.gif")
+    screen.addshape("./baseCodeGui/data/wumpus.gif")
+    screen.addshape("./baseCodeGui/data/pit.gif")
+    screen.addshape("./baseCodeGui/data/gold.gif")
+    screen.addshape("./baseCodeGui/data/arrow0.gif")
+    screen.addshape("./baseCodeGui/data/arrow90.gif")
+    screen.addshape("./baseCodeGui/data/arrow180.gif")
+    screen.addshape("./baseCodeGui/data/arrow270.gif")
 
 def setWorld(): #게임의 initial state를 설정.
     global gridState, existObj, visitedGrid, wumpusObj
@@ -307,22 +321,13 @@ def printPercept():
         percept += "None"
     pmsg.write(percept, False, "center", ("", 15, "bold"))
         
+
+
+
 screen = turtle.Screen()
 screen.title("Wumpus World")
 screen.setup(600, 600)
-screen.bgpic("./baseCodeGui/data/world2.gif")
-screen.addshape("./baseCodeGui/data/traveler0.gif")
-screen.addshape("./baseCodeGui/data/traveler90.gif")
-screen.addshape("./baseCodeGui/data/traveler180.gif")
-screen.addshape("./baseCodeGui/data/traveler270.gif")
-screen.addshape("./baseCodeGui/data/climber.gif")
-screen.addshape("./baseCodeGui/data/wumpus.gif")
-screen.addshape("./baseCodeGui/data/pit.gif")
-screen.addshape("./baseCodeGui/data/gold.gif")
-screen.addshape("./baseCodeGui/data/arrow0.gif")
-screen.addshape("./baseCodeGui/data/arrow90.gif")
-screen.addshape("./baseCodeGui/data/arrow180.gif")
-screen.addshape("./baseCodeGui/data/arrow270.gif")
+importImages()
 
 agent = turtle.Turtle()
 agent.hideturtle()
@@ -348,7 +353,7 @@ arrow.hideturtle()
 arrow.up()
 arrow.speed(1)
 
-world = [7, 8, 9, 10,
+world = [7, 8, 9, 10, #
         13, 14, 15, 16,
         19, 20, 21, 22,
         25, 26, 27, 28]
